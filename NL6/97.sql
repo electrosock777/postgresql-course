@@ -1,0 +1,2 @@
+SELECT lidesired - lipurchased AS "Items Still Desired" FROM listitems;
+--SELECT items.iname, lidesired, lipurchased, lidesired - lipurchased AS "Items Still Desired" FROM listitems INNER JOIN items ON items.iid = listitems.iid ORDER BY "Items Still Desired" DESC;

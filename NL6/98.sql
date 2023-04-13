@@ -1,0 +1,2 @@
+SELECT lidesired, lipurchased, round((1 - (lidesired - lipurchased)/CAST (lidesired AS numeric)) * 100, 2) || '%' AS "Fulfillment" FROM listitems;
+--SELECT lidesired, lipurchased, round(1 - CAST ((lidesired - lipurchased) AS numeric)/lidesired, 2) AS "Fulfillment" FROM listitems;
