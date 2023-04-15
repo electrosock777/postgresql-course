@@ -1,0 +1,1 @@
+SELECT pfirstname || ' ' || plastname || ' is ' || CAST ('now' AS TIMESTAMP) - pdob || ' years old.'  FROM people AS "Age";

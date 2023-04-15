@@ -1,0 +1,1 @@
+SELECT pfirstname || ' ' || plastname || ' has ' || CAST (ppoints AS TEXT) || ' points' AS "Customer Points" FROM people ORDER BY ppoints DESC;
