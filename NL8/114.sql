@@ -1,0 +1,1 @@
+SELECT pfirstname, pfavorites -> 'Desserts' AS "Favorite Desserts" FROM people;

@@ -1,0 +1,1 @@
+SELECT pfavorites -> 'Desserts' ? 'ice cream' AS "Likes ice cream" FROM people;
