@@ -1,7 +1,7 @@
 SELECT pfirstname, plastname, "Item Count"
 FROM
-    people
-    JOIN (SELECT COUNT(*) AS "Item Count", lists.pid AS "LPID" FROM listitems
+    people JOIN
+        (SELECT COUNT(*) AS "Item Count", lists.pid AS "LPID" FROM listitems
         JOIN lists ON (listitems.lid = lists.lid)
         GROUP BY lists.pid) subtable
     ON ("LPID" = people.pid)
