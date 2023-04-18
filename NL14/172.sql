@@ -5,8 +5,9 @@ FROM
         JOIN lists ON (listitems.lid = lists.lid)
         GROUP BY lists.pid) subtable
     ON ("LPID" = people.pid)
-WHERE "Item Count" IS NOT NULL
-ORDER BY "Item Count" DESC;
+WHERE "Item Count" > 1
+ORDER BY "Item Count" DESC
+LIMIT 1;
 
 
 -- SELECT
@@ -49,5 +50,6 @@ SELECT
     plastname,
     (SELECT COUNT(*) FROM listitems JOIN lists USING (lid) WHERE lists.pid = people.pid) AS "No items"
 FROM people
+WHERE (SELECT COUNT(*) FROM listitems JOIN lists USING (lid) WHERE lists.pid = people.pid) > 1
 ORDER BY "No items" DESC
 LIMIT 10;
