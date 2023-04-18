@@ -20,7 +20,7 @@ ORDER BY "Item Count" DESC;
 
 
 
-SELECT pfirstname, plastname, lists.lid, lname, items.iid, iname
+SELECT pfirstname, plastname, people.pid, lists.pid, lists.lid, lname, items.iid, iname
 FROM people
     LEFT JOIN lists ON (people.pid = lists.pid)
     LEFT JOIN listitems ON (lists.lid = listitems.lid)
@@ -39,6 +39,15 @@ ORDER BY lid;
 SELECT
     pfirstname,
     plastname,
-    (SELECT COUNT(*) FROM listitems WHERE lists.lid = listitems.lid) AS "No items"
+    (SELECT COUNT(*) FROM listitems WHERE listitems.lid = lists.lid) AS "No items"
 FROM people JOIN lists USING (pid)
-ORDER BY "No items" DESC;
+ORDER BY "No items" DESC
+LIMIT 10;
+
+SELECT
+    pfirstname,
+    plastname,
+    (SELECT COUNT(*) FROM listitems JOIN lists USING (lid) WHERE lists.pid = people.pid) AS "No items"
+FROM people
+ORDER BY "No items" DESC
+LIMIT 10;
