@@ -19,8 +19,6 @@ LIMIT 1;
 -- ORDER BY "No items" DESC;
 
 
-
-
 SELECT pfirstname, plastname, people.pid, lists.pid, lists.lid, lname, items.iid, iname
 FROM people
     LEFT JOIN lists ON (people.pid = lists.pid)
@@ -28,13 +26,6 @@ FROM people
     LEFT JOIN items ON (listitems.iid = items.iid)
 WHERE pfirstname = 'Mdojlixyqms' AND plastname = 'Stozwocmidwu'
 ORDER BY lid;
-
-
--- SELECT COUNT(*)
--- FROM people
---     LEFT JOIN lists ON (people.pid = lists.pid)
---     LEFT JOIN listitems ON (lists.lid = listitems.lid)
--- WHERE pfirstname = 'Ideipepzekir' AND plastname = 'Oqplaryguvws';
 
 
 SELECT
