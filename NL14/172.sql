@@ -7,7 +7,7 @@ FROM
     ON ("LPID" = people.pid)
 WHERE "Item Count" > 1
 ORDER BY "Item Count" DESC
-LIMIT 1;
+LIMIT 10;
 
 
 -- SELECT
@@ -35,6 +35,7 @@ SELECT
 FROM people JOIN lists USING (pid)
 WHERE pfirstname = 'Mdojlixyqms'
 ORDER BY "No items" DESC;
+
 
 SELECT
     pfirstname,
